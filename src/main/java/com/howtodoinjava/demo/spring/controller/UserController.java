@@ -22,7 +22,7 @@ public class UserController {
 	@Autowired
 	private UserService userService;
 
-	@GetMapping("/")
+	@GetMapping("/users")
 	public String userForm(
           Locale locale, Model model) {
 		model.addAttribute("users", userService.list());
@@ -43,6 +43,6 @@ public class UserController {
 		}
 
 		userService.save(user);
-		return "redirect:/";
+		return "redirect:/users";
 	}
 }

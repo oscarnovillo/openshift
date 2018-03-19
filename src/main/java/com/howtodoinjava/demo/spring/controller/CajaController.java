@@ -41,7 +41,7 @@ public class CajaController {
             model.addAttribute("cajas", userService.list());
             return "editCaja";
         }
-
+user.setUser(new User(1L, "pp", ""));
         userService.save(user);
         return "redirect:/caja";
     }

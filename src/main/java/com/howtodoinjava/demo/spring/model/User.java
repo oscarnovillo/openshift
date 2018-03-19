@@ -1,9 +1,12 @@
 package com.howtodoinjava.demo.spring.model;
 
+import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
@@ -30,6 +33,10 @@ public class User {
    @NotEmpty(message="Please Enter your email")
    private String email;
 
+    @OneToMany(mappedBy="user",fetch = FetchType.EAGER)
+    private Set<Caja> cajas;
+   
+   
     public User(Long id, String name, String email) {
         this.id = id;
         this.name = name;
@@ -62,4 +69,15 @@ public class User {
    public void setEmail(String email) {
       this.email = email;
    }
+
+    public Set<Caja> getCajas() {
+        return cajas;
+    }
+
+    public void setCajas(Set<Caja> cajas) {
+        this.cajas = cajas;
+    }
+   
+   
+   
 }

@@ -34,6 +34,11 @@ public class Caja {
     @NotEmpty(message = "Please Enter your name")
     private String name;
 
+    
+    @ManyToOne
+    @JoinColumn(name="USER_ID", nullable=false)
+    private User user;
+    
     public Caja() {
     }
 
@@ -58,5 +63,16 @@ public class Caja {
        
         this.name = name;
     }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+    
+    
+    
 
 }
