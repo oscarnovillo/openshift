@@ -23,7 +23,7 @@
         </style>
     </head>
     <body>
-        <h1>Input Form</h1>
+        <h1>Input Form CAMBIADO</h1>
         <form:form action="addUser" method="post" modelAttribute="user">
             <table>
                 <tr>
